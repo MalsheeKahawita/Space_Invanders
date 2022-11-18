@@ -1,9 +1,2 @@
-#cresting environment
-
-
-#v gdhwbhedgyegdh
-
-
-#ggj
-
-#ffgnfinidn
+#importing Libraries
+import pygame
