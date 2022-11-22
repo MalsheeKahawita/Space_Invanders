@@ -16,14 +16,17 @@ playerX = 370
 playerY = 480
 
 def player():
-    screen.blit(playerImg)
+    screen.blit(playerImg,(playerX, playerY))
 
 running = True
 while running:
+
+    # adding background colour
+    screen.fill((78, 123, 134))
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
-    #adding background colour
-    screen.fill((78, 123, 134))
+    player()
     pygame.display.update()
