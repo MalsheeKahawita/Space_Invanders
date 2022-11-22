@@ -15,3 +15,7 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    #adding background colour
+    screen.fill((78, 123, 134))
+    pygame.display.update()
