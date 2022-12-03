@@ -24,11 +24,17 @@ while running:
     # adding background colour
     screen.fill((78, 123, 134))
 
-    playerX += 0.2
-    playerY +=0.5
+
+
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+        # keystroke check whether it's right or left
+        if event.type == pygame.KEYDOWN:
+            if event.type == pygame.K_LEFT:
+                print("left arrow is pressed")
 
     player(playerX, playerY)
     pygame.display.update()
