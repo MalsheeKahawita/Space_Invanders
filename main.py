@@ -42,7 +42,7 @@ while running:
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
-                playerX_change = 0
+                playerX_change = 0.0
 
     playerX +=playerX_change
     player(playerX, playerY)
