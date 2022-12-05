@@ -14,6 +14,7 @@ pygame.display.set_icon(icon)
 playerImg = pygame.image.load("spaceship.png")
 playerX = 370
 playerY = 480
+playerX_change = 0
 
 def player(x, y):
     screen.blit(playerImg,(x, y))
@@ -33,13 +34,16 @@ while running:
 
     # keystroke check whether it's right or left
         if event.type == pygame.KEYDOWN:
-            if event.type == pygame.K_LEFT:
-                print("left arrow is pressed")
-            if event.type == pygame.K_RIGHT:
-                print("left arrow is pressed")
+
+            if event.key == pygame.K_LEFT:
+                playerX_change = -0.5
+            if event.key == pygame.K_RIGHT:
+                playerX_change = 0.5
 
         if event.type == pygame.KEYUP:
-            if event.type == pygame.K_LEFT or event.type == pygame.K_RIGHT:
-                print("Key has been released")
+            if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
+                playerX_change = 0
+
+    playerX +=playerX_change
     player(playerX, playerY)
     pygame.display.update()
