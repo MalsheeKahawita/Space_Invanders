@@ -22,7 +22,7 @@ enemyImg = pygame.image.load("enemy.png")
 enemyX = random.randint(0, 800)
 enemyY = random.randint(50, 150)
 
-def player(x, y):
+def player(x, y) :
     screen.blit(playerImg, (x, y))
 
 def enemy(x, y):
