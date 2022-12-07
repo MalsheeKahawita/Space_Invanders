@@ -71,10 +71,10 @@ while running:
     enemyX += enemyX_change
 
     if enemyX <= 0:
-        enemyX_change = 1.5
+        enemyX_change = 1.0
         enemyY += enemyY_change
     elif enemyX >= 736:
-        enemyX_change = -1.5
+        enemyX_change = -1.0
         enemyY += enemyY_change
 
     player(playerX, playerY)
