@@ -11,6 +11,9 @@ pygame.display.set_caption("Space Invaders")
 icon = pygame.image.load("space-ship.png")
 pygame.display.set_icon(icon)
 
+#add background imag
+bgImg = pygame.image.load("game_background.png")
+
 #player
 playerImg = pygame.image.load("spaceship.png")
 playerX = 370
@@ -35,7 +38,8 @@ while running:
     # adding background colour
     screen.fill((78, 123, 134))
 
-
+    #ADD BACKGROUND IMAGE
+    screen.blit(bgImg, (0, 0))
 
 
     for event in pygame.event.get():
