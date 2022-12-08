@@ -43,10 +43,10 @@ def player(x, y) :
 def enemy(x, y):
     screen.blit(enemyImg, (x, y))
 
-def bullet(x, y):
+def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
-    screen.blit(bulletImg, x+16, y+10)
+    screen.blit(bulletImg, (x+16, y+10))
 
 running = True
 while running:
@@ -70,7 +70,8 @@ while running:
             if event.key == pygame.K_RIGHT:
                 playerX_change = 1.5
             if event.key == pygame.K_SPACE:
-                bullet( playerX, bulletY)
+                fire_bullet(playerX,bulletY)
+
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
@@ -84,16 +85,21 @@ while running:
     elif playerX > 736:
         playerX = 736
 
-#checking for boundries of enemy
+#enemy movements
 
     enemyX += enemyX_change
-
     if enemyX <= 0:
         enemyX_change = 1.0
         enemyY += enemyY_change
     elif enemyX >= 736:
         enemyX_change = -1.0
         enemyY += enemyY_change
+
+#bullet movements
+    if bullet_state is "fire":
+        fire_bullet(playerX,bulletY)
+        bulletY -= bulletY_change
+
 
     player(playerX, playerY)
     enemy(enemyX, enemyY)
