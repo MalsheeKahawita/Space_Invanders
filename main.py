@@ -48,8 +48,6 @@ def bullet(x, y):
     bullet_state = "fire"
     screen.blit(bulletImg, x+16, y+10)
 
-
-
 running = True
 while running:
 
@@ -71,6 +69,8 @@ while running:
                 playerX_change = -1.5
             if event.key == pygame.K_RIGHT:
                 playerX_change = 1.5
+            if event.key == pygame.K_SPACE:
+                bullet( playerX, bulletY)
 
         if event.type == pygame.KEYUP:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
