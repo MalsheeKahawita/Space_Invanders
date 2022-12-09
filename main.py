@@ -96,6 +96,9 @@ while running:
         enemyY += enemyY_change
 
 #bullet movements
+    if bulletY <= 0:
+        bulletY = 480
+        bullet_state = "ready"
     if bullet_state is "fire":
         fire_bullet(playerX,bulletY)
         bulletY -= bulletY_change
