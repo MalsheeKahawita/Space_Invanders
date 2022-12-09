@@ -101,8 +101,9 @@ while running:
         bulletY = 480
         bullet_state = "ready"
     if bullet_state is "fire":
-        fire_bullet(bulletX, bulletY)
-        bulletY -= bulletY_change
+        if bullet_state is "ready"
+            fire_bullet(bulletX, bulletY)
+            bulletY -= bulletY_change
 
 
     player(playerX, playerY)
