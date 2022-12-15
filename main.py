@@ -100,7 +100,7 @@ while running:
         enemyX_change = -1.0
         enemyY += enemyY_change
 
-    #bullet Movement
+    #bullet Movement added
     if bullet_state == "fire":
         fire_bullet(playerX, bulletY)
         bulletY -= bulletY_change
