@@ -1,5 +1,6 @@
 import pygame
 import random
+import math
 
 #intializr the library
 pygame.init()
@@ -37,17 +38,20 @@ bulletX_change = 0
 bulletY_change = 10
 bullet_state = "ready"
 
+score = 0
 def player(x, y) :
     screen.blit(playerImg, (x, y))
 
 def enemy(x, y):
     screen.blit(enemyImg, (x, y))
 
-def fire_bullet(x, y):
+def fire_bullet (x,y):
     global bullet_state
     bullet_state = "fire"
-    screen.blit(bulletImg, (x+16, y+10))
+    screen.blit(bulletImg, (x + 16, y + 10))
 
+
+#Game Loop
 running = True
 while running:
 
@@ -70,8 +74,8 @@ while running:
             if event.key == pygame.K_RIGHT:
                 playerX_change = 1.5
             if event.key == pygame.K_SPACE:
-                bulletX = playerX
-                fire_bullet(bulletX, bulletY)
+                fire_bullet(playerX, bulletY)
+
 
 
         if event.type == pygame.KEYUP:
@@ -96,14 +100,12 @@ while running:
         enemyX_change = -1.0
         enemyY += enemyY_change
 
-#bullet movements
-    if bulletY <= 0:
-        bulletY = 480
-        bullet_state = "ready"
-    if bullet_state is "fire":
-        if bullet_state is "ready"
-            fire_bullet(bulletX, bulletY)
-            bulletY -= bulletY_change
+    #bullet Movement
+    if bullet_state == "fire":
+        fire_bullet(playerX, bulletY)
+        bulletY -= bulletY_change
+
+
 
 
     player(playerX, playerY)
