@@ -133,6 +133,7 @@ while running:
     if bulletY <= 0:
         bulletY =480
         bullet_state = "ready"
+        #bullet fire state
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
