@@ -60,8 +60,8 @@ def fire_bullet (x,y):
     screen.blit(bulletImg, (x + 16, y + 10))
 
 def isCollision(enemyX, enemyY, bulletX, bulletY):
-    distance = math.sqrt(math.pow(enemyX-bulletX, 2) + (math.pow(enemyY-bulletY, 2)))
-    if distance < 27:
+    distance = math.sqrt(math.pow(enemyX-bulletX, 2)+(math.pow(enemyY-bulletY, 2)))
+    if distance<27:
         return True
     else:
         return False
@@ -107,7 +107,7 @@ while running:
     elif playerX > 736:
         playerX = 736
 
-#enemy movements
+    #enemy movements
     for i in range (num_of_enemies):
         enemyX[i] += enemyX_change[i]
         if enemyX[i] <= 0:
