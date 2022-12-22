@@ -120,6 +120,7 @@ while running:
         # collision
         #is collision function called
         collision = isCollision(enemyX[i], enemyY[i], bulletX[i], bulletY[i])
+        #checking collision
         if collision:
             bulletY = 480
             bullet_state = "ready"
