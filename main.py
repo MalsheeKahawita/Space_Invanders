@@ -118,6 +118,7 @@ while running:
             enemyY[i] += enemyY_change[i]
 
         # collision
+        #is collision function called
         collision = isCollision(enemyX[i], enemyY[i], bulletX[i], bulletY[i])
         if collision:
             bulletY = 480
