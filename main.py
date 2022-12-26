@@ -129,7 +129,7 @@ while running:
             enemyX[i] = random.randint(0, 735)
             enemyY[i] = random.randint(50, 150)
 
-        enemy(enemyX[i], enemyY[i],i)
+        enemy(enemyX[i], enemyY[i], i)
 
     #bullet Movement added
     if bulletY <= 0:
